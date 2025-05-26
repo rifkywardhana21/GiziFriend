@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SehatKu - Pola Hidup Sehat</title>
+    <style>
+        /* Reset dan font */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            animation: gradientShift 12s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            }
+            33% {
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
+            }
+            66% {
+                background: linear-gradient(135deg, #fa709a 0%, #fee140 50%, #96fbc4 100%);
+            }
+        }
+        /* Container utama */
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 40px 50px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(15px);
+            animation: slideIn 0.8s ease forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Header */
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.35);
+            color: white;
+            user-select: none;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        /* Form Section */
+        
+        .form-section {
+            background: #f9faff;
+            padding: 35px 40px;
+            margin-bottom: 45px;
+            border-radius: 20px;
+            border: 1px solid #cfd9e9;
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .form-section:hover {
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.22);
+            transform: translateY(-6px);
+        }
+        /* Section Title */
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 30px;
+            user-select: none;
+        }
+        
+        .section-icon {
+            font-size: 1.8em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 14px;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+        /* Form Row */
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+        /* Form Group */
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+        }
+        
+        label {
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #4a5568;
+            user-select: none;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 14px 18px;
+            font-size: 1em;
+            border-radius: 12px;
+            border: 2px solid #d1d9f0;
+            background: #fff;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.35);
+            background: white;
+        }
+        /* Slider */
+        
+        .slider-container {
+            width: 100%;
+            margin-top: 5px;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 10px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #cbd5e0, #e2e8f0);
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+        /* Slider Value */
+        
+        .slider-value {
+            margin-top: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.3em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            user-select: none;
+        }
+        /* Checkbox Group */
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            border: 2px solid #d1d9f0;
+            border-radius: 14px;
+            padding: 12px 18px;
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+            flex: 1 1 200px;
+            max-width: 250px;
+        }
+        
+        .checkbox-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #667eea;
+            cursor: pointer;
+        }
+        /* Submit Button */
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 30px auto 0;
+            padding: 18px 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-size: 1.3em;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+            transition: background 0.4s ease, transform 0.3s ease;
+            user-select: none;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #4a56e2, #5f3aa2);
+            transform: translateY(-3px);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .checkbox-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>GiziFriend</h1>
+            <p>Analisis Pola Hidup Sehat & Gizi Harian Anda</p>
+        </div>
+
+        <form id="healthForm" onsubmit="return processForm(event)">
+            <!-- Data Pribadi -->
+            <section class="form-section">
+                <h3 class="section-title"><span class="section-icon">👤</span> Data Pribadi</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap Anda" />
+                    </div>
+                    <div class="form-group">
+                        <label for="usia">Usia (tahun)</label>
+                        <input type="number" id="usia" name="usia" min="1" max="120" required placeholder="Tahun" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="berat">Berat Badan (kg)</label>
+                        <input type="number" id="berat" name="berat" step="0.1" required placeholder="50.5" />
+                    </div>
+                    <div class="form-group">
+                        <label for="tinggi">Tinggi Badan (cm)</label>
+                        <input type="number" id="tinggi" name="tinggi" required placeholder="170" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Jenis Kelamin</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Pilih jenis kelamin...</option>
+                        <option value="pria">Pria</option>
+                        <option value="wanita">Wanita</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Pola Makan -->
+            <section class="form-section">
+                <h3 class="section-title"><span class="section-icon">🍽️</span> Pola Makan Harian</h3>
+
+                <div class="form-group">
+                    <label for="frekuensiMakan">Frekuensi Makan per Hari</label>
+                    <div class="slider-container">
+                        <input type="range" id="frekuensiMakan" name="frekuensiMakan" min="1" max="6" value="3" class="slider" />
+                        <div class="slider-value" id="frekuensiValue">3 kali</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="konsumsiAir">Konsumsi Air per Hari (gelas)</label>
+                    <div class="slider-container">
+                        <input type="range" id="konsumsiAir" name="konsumsiAir" min="1" max="15" value="8" class="slider" />
+                        <div class="slider-value" id="airValue">8 gelas</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Makanan yang Sering Dikonsumsi</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="nasi" name="makanan" value="nasi" />
+                            <label for="nasi">🍚 Nasi/Karbohidrat</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sayuran" name="makanan" value="sayuran" />
+                            <label for="sayuran">🥬 Sayuran</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="buah" name="makanan" value="buah" />
+                            <label for="buah">🍎 Buah-buahan</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="protein" name="makanan" value="protein" />
+                            <label for="protein">🥩 Protein (Daging/Ikan)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="susu" name="makanan" value="susu" />
+                            <label for="susu">🥛 Produk Susu</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="fastfood" name="makanan" value="fastfood" />
+                            <label for="fastfood">🍔 Fast Food</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aktivitas Fisik -->
+            <section class="form-section">
+                <h3 class="section-title"><span class="section-icon">🏃</span> Aktivitas Fisik</h3>
+
+                <div class="form-group">
+                    <label for="frekuensiOlahraga">Frekuensi Olahraga per Minggu</label>
+                    <div class="slider-container">
+                        <input type="range" id="frekuensiOlahraga" name="frekuensiOlahraga" min="0" max="7" value="3" class="slider" />
+                        <div class="slider-value" id="olahragaValue">3 kali</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Aktivitas Fisik</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="jalan" name="aktivitas" value="jalan" />
+                            <label for="jalan">🚶 Jalan Kaki</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="lari" name="aktivitas" value="lari" />
+                            <label for="lari">🏃 Lari</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gym" name="aktivitas" value="gym" />
+                            <label for="gym">💪 Gym/Fitness</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="berenang" name="aktivitas" value="berenang" />
+                            <label for="berenang">🏊 Berenang</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sepeda" name="aktivitas" value="sepeda" />
+                            <label for="sepeda">🚴 Bersepeda</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="yoga" name="aktivitas" value="yoga" />
+                            <label for="yoga">🧘 Yoga/Pilates</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="durasiOlahraga">Durasi Olahraga (menit per sesi)</label>
+                    <div class="slider-container">
+                        <input type="range" id="durasiOlahraga" name="durasiOlahraga" min="15" max="120" value="30" class="slider" />
+                        <div class="slider-value" id="durasiValue">30 menit</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gaya Hidup -->
+            <section class="form-section">
+                <h3 class="section-title"><span class="section-icon">😴</span> Gaya Hidup & Kebiasaan</h3>
+
+                <div class="form-group">
+                    <label for="jamTidur">Jam Tidur per Malam</label>
+                    <div class="slider-container">
+                        <input type="range" id="jamTidur" name="jamTidur" min="3" max="12" value="8" class="slider" />
+                        <div class="slider-value" id="tidurValue">8 jam</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="merokok">Status Merokok</label>
+                        <select id="merokok" name="merokok" required>
+                            <option value="">Pilih status...</option>
+                            <option value="tidak">🚭 Tidak Merokok</option>
+                            <option value="kadang">⚠️ Kadang-kadang</option>
+                            <option value="sering">🚬 Sering</option>
+                            <option value="berat">🔥 Perokok Berat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="alkohol">Konsumsi Alkohol</label>
+                        <select id="alkohol" name="alkohol" required>
+                            <option value="">Pilih frekuensi...</option>
+                            <option value="tidak">✅ Tidak Pernah</option>
+                            <option value="jarang">🟡 Jarang</option>
+                            <option value="kadang">🟠 Kadang-kadang</option>
+                            <option value="sering">🔴 Sering</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tingkatStress">Tingkat Stress Harian</label>
+                    <div class="slider-container">
+                        <input type="range" id="tingkatStress" name="tingkatStress" min="1" max="10" value="5" class="slider" />
+                        <div class="slider-value" id="stressValue">5 / 10</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kondisi Kesehatan -->
+            <section class="form-section">
+                <h3 class="section-title"><span class="section-icon">🏥</span> Kondisi Kesehatan</h3>
+
+                <div class="form-group">
+                    <label>Riwayat Penyakit (jika ada)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="diabetes" name="penyakit" value="diabetes" />
+                            <label for="diabetes">🩺 Diabetes</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hipertensi" name="penyakit" value="hipertensi" />
+                            <label for="hipertensi">❤️ Hipertensi</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="jantung" name="penyakit" value="jantung" />
+                            <label for="jantung">🫀 Penyakit Jantung</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ginjal" name="penyakit" value="ginjal" />
+                            <label for="ginjal">🩸 Penyakit Ginjal</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="asamurat" name="penyakit" value="asamurat" />
+                            <label for="asamurat">🦴 Asam Urat</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <button type="submit" class="submit-btn">Kirim Data</button>
+        </form>
+    </div>
+
+    <script>
+        // Update slider values realtime
+        const sliders = [{
+            id: 'frekuensiMakan',
+            outputId: 'frekuensiValue',
+            suffix: ' kali'
+        }, {
+            id: 'konsumsiAir',
+            outputId: 'airValue',
+            suffix: ' gelas'
+        }, {
+            id: 'frekuensiOlahraga',
+            outputId: 'olahragaValue',
+            suffix: ' kali'
+        }, {
+            id: 'durasiOlahraga',
+            outputId: 'durasiValue',
+            suffix: ' menit'
+        }, {
+            id: 'jamTidur',
+            outputId: 'tidurValue',
+            suffix: ' jam'
+        }, {
+            id: 'tingkatStress',
+            outputId: 'stressValue',
+            suffix: ' / 10'
+        }, ];
+
+        sliders.forEach(({
+            id,
+            outputId,
+            suffix
+        }) => {
+            const slider = document.getElementById(id);
+            const output = document.getElementById(outputId);
+
+            if (slider && output) {
+                output.textContent = slider.value + suffix;
+
+                slider.addEventListener('input', () => {
+                    output.textContent = slider.value + suffix;
+                });
+            }
+        });
+
+        // Algoritma Reasoning: hitung BMI dan kategori
+        function processForm(event) {
+            event.preventDefault(); // cegah form submit default
+
+            // Ambil nilai berat dan tinggi dari form
+            const berat = parseFloat(document.getElementById('berat').value);
+            const tinggi = parseFloat(document.getElementById('tinggi').value);
+
+            if (isNaN(berat) || isNaN(tinggi) || berat <= 0 || tinggi <= 0) {
+                alert('Tolong isi berat dan tinggi badan dengan benar!');
+                return false;
+            }
+
+            // Hitung BMI
+            const tinggiMeter = tinggi / 100;
+            const bmi = berat / (tinggiMeter * tinggiMeter);
+
+            // Tentukan kategori BMI
+            let kategori = '';
+            if (bmi < 18.5) {
+                kategori = 'Kurus (Underweight)';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                kategori = 'Normal - Ideal';
+            } else if (bmi >= 25 && bmi < 30) {
+                kategori = 'Gemuk (Overweight)';
+            } else {
+                kategori = 'Obesitas (Obese)';
+            }
+
+            // Tampilkan hasil BMI
+            alert(
+                `Hasil Perhitungan BMI:\n\n` +
+                `Berat badan: ${berat} kg\n` +
+                `Tinggi badan: ${tinggi} cm\n` +
+                `BMI Anda: ${bmi.toFixed(1)}\n` +
+                `Kategori: ${kategori}`
+            );
+
+            // Setelah itu arahkan ke halaman hasil
+            window.location.href = 'health_result_page.html';
+
+            return false; // mencegah submit form standar
+        }
+    </script>
+</body>
+
+</html>
