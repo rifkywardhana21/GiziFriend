@@ -7,281 +7,256 @@
     <title>SehatKu - Pola Hidup Sehat</title>
     <style>
         /* Reset dan font */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
             min-height: 100vh;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            animation: gradientShift 12s ease infinite;
+            color: #333;
         }
-
-        @keyframes gradientShift {
-            0%,
-            100% {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            }
-
-            33% {
-                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
-            }
-
-            66% {
-                background: linear-gradient(135deg, #fa709a 0%, #fee140 50%, #96fbc4 100%);
-            }
-        }
-
-        /* Container utama */
+        
         .container {
             width: 100%;
             max-width: 900px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 24px;
+            background: #fff;
+            border-radius: 16px;
             padding: 40px 50px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(15px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             animation: slideIn 0.8s ease forwards;
         }
-
+        
         @keyframes slideIn {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        /* Header */
+        
         .header {
             text-align: center;
             margin-bottom: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.35);
-            color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
             user-select: none;
         }
-
+        
         .header h1 {
-            font-size: 3em;
-            background: linear-gradient(45deg, #fff, #f0f8ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            font-size: 2.8em;
+            color: #2d3748;
+            margin-bottom: 5px;
         }
-
+        
         .header p {
-            font-size: 1.3em;
-            opacity: 0.9;
+            font-size: 1.1em;
+            color: #4a5568;
             font-weight: 500;
         }
-
         /* Form Section */
+        
         .form-section {
-            background: #f9faff;
-            padding: 35px 40px;
+            background: #f9fafb;
+            padding: 30px 35px;
             margin-bottom: 45px;
-            border-radius: 20px;
-            border: 1px solid #cfd9e9;
-            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
-
+        
         .form-section:hover {
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.22);
-            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(49, 130, 206, 0.25);
+            transform: translateY(-4px);
         }
-
-        /* Section Title */
+        
         .section-title {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             font-weight: 700;
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: #2d3748;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             user-select: none;
         }
-
+        
         .section-icon {
-            font-size: 1.8em;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-size: 1.6em;
+            background: #3182ce;
             color: white;
-            padding: 10px 14px;
-            border-radius: 14px;
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+            padding: 8px 12px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
         /* Form Row */
+        
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 25px;
+            gap: 25px;
+            margin-bottom: 22px;
         }
-
         /* Form Group */
+        
         .form-group {
             display: flex;
             flex-direction: column;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
-
+        
         label {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
-            font-size: 1.05em;
+            font-size: 1em;
             color: #4a5568;
             user-select: none;
         }
-
+        
         input[type="text"],
         input[type="number"],
         select {
-            padding: 14px 18px;
+            padding: 12px 16px;
             font-size: 1em;
-            border-radius: 12px;
-            border: 2px solid #d1d9f0;
+            border-radius: 8px;
+            border: 1.8px solid #cbd5e0;
             background: #fff;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         input[type="text"]:focus,
         input[type="number"]:focus,
         select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.35);
-            background: white;
+            border-color: #3182ce;
+            box-shadow: 0 0 8px rgba(49, 130, 206, 0.3);
+            background: #fff;
         }
-
         /* Slider */
+        
         .slider-container {
             width: 100%;
             margin-top: 5px;
         }
-
+        
         .slider {
             width: 100%;
-            height: 10px;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #cbd5e0, #e2e8f0);
+            height: 8px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #e2e8f0, #cbd5e0);
             -webkit-appearance: none;
             appearance: none;
             cursor: pointer;
             transition: background 0.3s ease;
         }
-
+        
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 26px;
-            height: 26px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            background: #3182ce;
+            box-shadow: 0 3px 10px rgba(49, 130, 206, 0.5);
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-
+        
         .slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
+            transform: scale(1.15);
         }
-
         /* Slider Value */
+        
         .slider-value {
-            margin-top: 12px;
+            margin-top: 10px;
             text-align: center;
             font-weight: 700;
-            font-size: 1.3em;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.1em;
+            color: #2c5282;
             user-select: none;
         }
-
         /* Checkbox Group */
+        
         .checkbox-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 18px;
             margin-top: 10px;
         }
-
+        
         .checkbox-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: #fff;
-            border: 2px solid #d1d9f0;
-            border-radius: 14px;
-            padding: 12px 18px;
+            border: 1.8px solid #cbd5e0;
+            border-radius: 12px;
+            padding: 10px 16px;
             cursor: pointer;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             user-select: none;
-            flex: 1 1 200px;
-            max-width: 250px;
+            flex: 1 1 180px;
+            max-width: 240px;
         }
-
+        
         .checkbox-item:hover {
-            border-color: #667eea;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+            border-color: #3182ce;
+            box-shadow: 0 8px 18px rgba(49, 130, 206, 0.18);
         }
-
+        
         .checkbox-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            accent-color: #667eea;
+            width: 18px;
+            height: 18px;
+            accent-color: #3182ce;
             cursor: pointer;
         }
-
         /* Submit Button */
+        
         .submit-btn {
             display: block;
             width: 100%;
             max-width: 320px;
             margin: 30px auto 0;
-            padding: 18px 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 16px 0;
+            background: #3182ce;
             color: white;
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 700;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
-            transition: background 0.4s ease, transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(49, 130, 206, 0.45);
+            transition: background 0.3s ease, transform 0.3s ease;
             user-select: none;
         }
-
+        
         .submit-btn:hover {
-            background: linear-gradient(135deg, #4a56e2, #5f3aa2);
+            background: #2c5282;
             transform: translateY(-3px);
         }
-
+        
         .submit-btn:active {
             transform: translateY(-1px);
         }
-
         /* Responsive */
+        
         @media (max-width: 768px) {
             .form-row {
                 grid-template-columns: 1fr;
             }
-
             .checkbox-group {
                 flex-direction: column;
                 gap: 15px;
@@ -299,34 +274,34 @@
 
         <form id="healthForm" onsubmit="return processForm(event)">
             <!-- Data Pribadi -->
-            <section class="form-section">
-                <h3 class="section-title"><span class="section-icon">👤</span> Data Pribadi</h3>
+            <section class="form-section" aria-label="Data Pribadi">
+                <h3 class="section-title"><span class="section-icon" aria-hidden="true">👤</span> Data Pribadi</h3>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap</label>
-                        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap Anda" />
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required aria-required="true" aria-label="Nama Lengkap" />
                     </div>
                     <div class="form-group">
                         <label for="usia">Usia (tahun)</label>
-                        <input type="number" id="usia" name="usia" min="1" max="120" required placeholder="Tahun" />
+                        <input type="number" id="usia" name="usia" min="1" max="120" placeholder="Tahun" required aria-required="true" aria-label="Usia" />
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="berat">Berat Badan (kg)</label>
-                        <input type="number" id="berat" name="berat" step="0.1" required placeholder="50.5" />
+                        <input type="number" id="berat" name="berat" step="0.1" placeholder="50.5" required aria-required="true" aria-label="Berat Badan" />
                     </div>
                     <div class="form-group">
                         <label for="tinggi">Tinggi Badan (cm)</label>
-                        <input type="number" id="tinggi" name="tinggi" required placeholder="170" />
+                        <input type="number" id="tinggi" name="tinggi" placeholder="170" required aria-required="true" aria-label="Tinggi Badan" />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="gender">Jenis Kelamin</label>
-                    <select id="gender" name="gender" required>
+                    <select id="gender" name="gender" required aria-required="true" aria-label="Jenis Kelamin">
                         <option value="">Pilih jenis kelamin...</option>
                         <option value="pria">Pria</option>
                         <option value="wanita">Wanita</option>
@@ -335,13 +310,13 @@
             </section>
 
             <!-- Pola Makan -->
-            <section class="form-section">
-                <h3 class="section-title"><span class="section-icon">🍽️</span> Pola Makan Harian</h3>
+            <section class="form-section" aria-label="Pola Makan Harian">
+                <h3 class="section-title"><span class="section-icon" aria-hidden="true">🍽️</span> Pola Makan Harian</h3>
 
                 <div class="form-group">
                     <label for="frekuensiMakan">Frekuensi Makan per Hari</label>
                     <div class="slider-container">
-                        <input type="range" id="frekuensiMakan" name="frekuensiMakan" min="1" max="6" value="3" class="slider" />
+                        <input type="range" id="frekuensiMakan" name="frekuensiMakan" min="1" max="6" value="3" class="slider" aria-valuemin="1" aria-valuemax="6" aria-valuenow="3" aria-label="Frekuensi Makan per Hari" />
                         <div class="slider-value" id="frekuensiValue">3 kali</div>
                     </div>
                 </div>
@@ -349,14 +324,14 @@
                 <div class="form-group">
                     <label for="konsumsiAir">Konsumsi Air per Hari (gelas)</label>
                     <div class="slider-container">
-                        <input type="range" id="konsumsiAir" name="konsumsiAir" min="1" max="15" value="8" class="slider" />
+                        <input type="range" id="konsumsiAir" name="konsumsiAir" min="1" max="15" value="8" class="slider" aria-valuemin="1" aria-valuemax="15" aria-valuenow="8" aria-label="Konsumsi Air per Hari" />
                         <div class="slider-value" id="airValue">8 gelas</div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Jenis Makanan yang Sering Dikonsumsi</label>
-                    <div class="checkbox-group">
+                    <div class="checkbox-group" role="group" aria-label="Jenis Makanan yang Sering Dikonsumsi">
                         <div class="checkbox-item">
                             <input type="checkbox" id="nasi" name="makanan" value="nasi" />
                             <label for="nasi">🍚 Nasi/Karbohidrat</label>
@@ -386,20 +361,20 @@
             </section>
 
             <!-- Aktivitas Fisik -->
-            <section class="form-section">
-                <h3 class="section-title"><span class="section-icon">🏃</span> Aktivitas Fisik</h3>
+            <section class="form-section" aria-label="Aktivitas Fisik">
+                <h3 class="section-title"><span class="section-icon" aria-hidden="true">🏃</span> Aktivitas Fisik</h3>
 
                 <div class="form-group">
                     <label for="frekuensiOlahraga">Frekuensi Olahraga per Minggu</label>
                     <div class="slider-container">
-                        <input type="range" id="frekuensiOlahraga" name="frekuensiOlahraga" min="0" max="7" value="3" class="slider" />
+                        <input type="range" id="frekuensiOlahraga" name="frekuensiOlahraga" min="0" max="7" value="3" class="slider" aria-valuemin="0" aria-valuemax="7" aria-valuenow="3" aria-label="Frekuensi Olahraga per Minggu" />
                         <div class="slider-value" id="olahragaValue">3 kali</div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Jenis Aktivitas Fisik</label>
-                    <div class="checkbox-group">
+                    <div class="checkbox-group" role="group" aria-label="Jenis Aktivitas Fisik">
                         <div class="checkbox-item">
                             <input type="checkbox" id="jalan" name="aktivitas" value="jalan" />
                             <label for="jalan">🚶 Jalan Kaki</label>
@@ -430,20 +405,20 @@
                 <div class="form-group">
                     <label for="durasiOlahraga">Durasi Olahraga (menit per sesi)</label>
                     <div class="slider-container">
-                        <input type="range" id="durasiOlahraga" name="durasiOlahraga" min="15" max="120" value="30" class="slider" />
+                        <input type="range" id="durasiOlahraga" name="durasiOlahraga" min="15" max="120" value="30" class="slider" aria-valuemin="15" aria-valuemax="120" aria-valuenow="30" aria-label="Durasi Olahraga per sesi" />
                         <div class="slider-value" id="durasiValue">30 menit</div>
                     </div>
                 </div>
             </section>
 
             <!-- Gaya Hidup -->
-            <section class="form-section">
-                <h3 class="section-title"><span class="section-icon">😴</span> Gaya Hidup & Kebiasaan</h3>
+            <section class="form-section" aria-label="Gaya Hidup & Kebiasaan">
+                <h3 class="section-title"><span class="section-icon" aria-hidden="true">😴</span> Gaya Hidup & Kebiasaan</h3>
 
                 <div class="form-group">
                     <label for="jamTidur">Jam Tidur per Malam</label>
                     <div class="slider-container">
-                        <input type="range" id="jamTidur" name="jamTidur" min="3" max="12" value="8" class="slider" />
+                        <input type="range" id="jamTidur" name="jamTidur" min="3" max="12" value="8" class="slider" aria-valuemin="3" aria-valuemax="12" aria-valuenow="8" aria-label="Jam Tidur per Malam" />
                         <div class="slider-value" id="tidurValue">8 jam</div>
                     </div>
                 </div>
@@ -451,7 +426,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="merokok">Status Merokok</label>
-                        <select id="merokok" name="merokok" required>
+                        <select id="merokok" name="merokok" required aria-required="true" aria-label="Status Merokok">
                             <option value="">Pilih status...</option>
                             <option value="tidak">🚭 Tidak Merokok</option>
                             <option value="kadang">⚠️ Kadang-kadang</option>
@@ -461,7 +436,7 @@
                     </div>
                     <div class="form-group">
                         <label for="alkohol">Konsumsi Alkohol</label>
-                        <select id="alkohol" name="alkohol" required>
+                        <select id="alkohol" name="alkohol" required aria-required="true" aria-label="Konsumsi Alkohol">
                             <option value="">Pilih frekuensi...</option>
                             <option value="tidak">✅ Tidak Pernah</option>
                             <option value="jarang">🟡 Jarang</option>
@@ -474,19 +449,19 @@
                 <div class="form-group">
                     <label for="tingkatStress">Tingkat Stress Harian</label>
                     <div class="slider-container">
-                        <input type="range" id="tingkatStress" name="tingkatStress" min="1" max="10" value="5" class="slider" />
+                        <input type="range" id="tingkatStress" name="tingkatStress" min="1" max="10" value="5" class="slider" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5" aria-label="Tingkat Stress Harian" />
                         <div class="slider-value" id="stressValue">5 / 10</div>
                     </div>
                 </div>
             </section>
 
             <!-- Kondisi Kesehatan -->
-            <section class="form-section">
-                <h3 class="section-title"><span class="section-icon">🏥</span> Kondisi Kesehatan</h3>
+            <section class="form-section" aria-label="Kondisi Kesehatan">
+                <h3 class="section-title"><span class="section-icon" aria-hidden="true">🏥</span> Kondisi Kesehatan</h3>
 
                 <div class="form-group">
                     <label>Riwayat Penyakit (jika ada)</label>
-                    <div class="checkbox-group">
+                    <div class="checkbox-group" role="group" aria-label="Riwayat Penyakit">
                         <div class="checkbox-item">
                             <input type="checkbox" id="diabetes" name="penyakit" value="diabetes" />
                             <label for="diabetes">🩺 Diabetes</label>
@@ -513,16 +488,10 @@
 
             <button type="submit" class="submit-btn">Kirim Data</button>
         </form>
-
-        <!-- Bagian hasil BMI -->
-        <section class="form-section" id="hasilSection" style="display:none;">
-            <h3 class="section-title"><span class="section-icon">📊</span> Hasil Analisis BMI</h3>
-            <pre id="hasilBMI" style="font-size: 1.3em; font-weight: 600; color:#333;"></pre>
-        </section>
     </div>
 
     <script>
-        // Update slider values realtime
+        // Update slider values realtime and update aria-valuenow for accessibility
         const sliders = [{
             id: 'frekuensiMakan',
             outputId: 'frekuensiValue',
@@ -559,55 +528,73 @@
 
             if (slider && output) {
                 output.textContent = slider.value + suffix;
+                slider.setAttribute('aria-valuenow', slider.value);
 
                 slider.addEventListener('input', () => {
                     output.textContent = slider.value + suffix;
+                    slider.setAttribute('aria-valuenow', slider.value);
                 });
             }
         });
 
-        // Algoritma Reasoning: hitung BMI dan kategori
+        // Proses form dan simpan data ke localStorage
         function processForm(event) {
-            event.preventDefault(); // cegah form submit default
+            event.preventDefault();
 
-            // Ambil nilai berat dan tinggi dari form
+            const nama = document.getElementById('nama').value.trim();
+            const usia = parseInt(document.getElementById('usia').value);
             const berat = parseFloat(document.getElementById('berat').value);
             const tinggi = parseFloat(document.getElementById('tinggi').value);
+            const gender = document.getElementById('gender').value;
 
-            if (isNaN(berat) || isNaN(tinggi) || berat <= 0 || tinggi <= 0) {
-                alert('Tolong isi berat dan tinggi badan dengan benar!');
+            if (!nama || isNaN(usia) || isNaN(berat) || isNaN(tinggi) || !gender) {
+                alert('Tolong isi semua data pribadi dengan benar!');
                 return false;
             }
 
-            // Hitung BMI
-            const tinggiMeter = tinggi / 100;
-            const bmi = berat / (tinggiMeter * tinggiMeter);
+            const frekuensiMakan = parseInt(document.getElementById('frekuensiMakan').value);
+            const konsumsiAir = parseInt(document.getElementById('konsumsiAir').value);
+            const makananNodes = document.querySelectorAll('input[name="makanan"]:checked');
+            const makanan = Array.from(makananNodes).map(el => el.value);
 
-            // Tentukan kategori BMI
-            let kategori = '';
-            if (bmi < 18.5) {
-                kategori = 'Kurus (Underweight)';
-            } else if (bmi >= 18.5 && bmi < 25) {
-                kategori = 'Normal - Ideal';
-            } else if (bmi >= 25 && bmi < 30) {
-                kategori = 'Gemuk (Overweight)';
-            } else {
-                kategori = 'Obesitas (Obese)';
-            }
+            const frekuensiOlahraga = parseInt(document.getElementById('frekuensiOlahraga').value);
+            const durasiOlahraga = parseInt(document.getElementById('durasiOlahraga').value);
+            const aktivitasNodes = document.querySelectorAll('input[name="aktivitas"]:checked');
+            const aktivitas = Array.from(aktivitasNodes).map(el => el.value);
 
-            // Tampilkan hasil di halaman
-            const hasilSection = document.getElementById('hasilSection');
-            const hasilBMI = document.getElementById('hasilBMI');
+            const jamTidur = parseInt(document.getElementById('jamTidur').value);
+            const merokok = document.getElementById('merokok').value;
+            const alkohol = document.getElementById('alkohol').value;
+            const tingkatStress = parseInt(document.getElementById('tingkatStress').value);
 
-            hasilBMI.textContent =
-                `Berat badan: ${berat} kg\n` +
-                `Tinggi badan: ${tinggi} cm\n` +
-                `BMI Anda: ${bmi.toFixed(1)}\n` +
-                `Kategori: ${kategori}`;
+            const penyakitNodes = document.querySelectorAll('input[name="penyakit"]:checked');
+            const penyakit = Array.from(penyakitNodes).map(el => el.value);
 
-            hasilSection.style.display = 'block';
+            const formData = {
+                nama,
+                usia,
+                berat,
+                tinggi,
+                gender,
+                frekuensiMakan,
+                konsumsiAir,
+                makanan,
+                frekuensiOlahraga,
+                durasiOlahraga,
+                aktivitas,
+                jamTidur,
+                merokok,
+                alkohol,
+                tingkatStress,
+                penyakit,
+            };
 
-            return false; // mencegah submit form standar
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Redirect ke halaman hasil, ganti dengan nama file hasil Anda
+            window.location.href = 'health_results_page.html';
+
+            return false;
         }
     </script>
 </body>
