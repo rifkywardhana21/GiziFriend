@@ -15,131 +15,105 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(180deg, #fafafa 0%, #e8e8e8 100%);
             min-height: 100vh;
-            padding: 24px;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            animation: gradientShift 12s ease infinite;
-            color: #2d3748;
+            color: #2c2c2c;
         }
-        
-        @keyframes gradientShift {
-            0%,
-            100% {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            }
-            33% {
-                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
-            }
-            66% {
-                background: linear-gradient(135deg, #fa709a 0%, #fee140 50%, #96fbc4 100%);
-            }
-        }
-        /* Container utama */
         
         .container {
             width: 100%;
-            max-width: 1100px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 28px;
-            padding: 48px 60px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
-            backdrop-filter: blur(16px);
-            animation: slideIn 0.8s ease forwards;
-            overflow: hidden;
+            max-width: 900px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 50px 60px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.07);
+            animation: fadeInUp 0.8s ease forwards;
         }
         
-        @keyframes slideIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(35px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        /* Header */
         
         .header {
             text-align: center;
-            margin-bottom: 48px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 36px 24px;
-            border-radius: 22px;
-            box-shadow: 0 12px 38px rgba(102, 126, 234, 0.45);
-            color: white;
+            margin-bottom: 50px;
+            color: #1a1a1a;
         }
         
         .header h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, #ffffff, #f0f8ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-            letter-spacing: 0.06em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+            color: #1a1a1a;
         }
         
         .header p {
-            font-size: 1.3rem;
-            font-weight: 600;
-            opacity: 0.95;
+            font-size: 1.25rem;
+            font-weight: 300;
             letter-spacing: 0.03em;
+            color: #555555;
         }
         /* BMI Card */
         
         .bmi-card {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            padding: 36px 30px;
-            border-radius: 26px;
-            margin-bottom: 38px;
+            background: #f5f5f5;
+            padding: 40px 35px;
+            border-radius: 24px;
+            margin-bottom: 40px;
             text-align: center;
-            box-shadow: 0 20px 42px rgba(79, 172, 254, 0.35);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
             user-select: none;
         }
         
         .bmi-value {
-            font-size: 4rem;
-            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 800;
             margin-bottom: 12px;
-            letter-spacing: 0.04em;
+            color: #333333;
         }
         
         .bmi-category {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.22);
-            padding: 10px 30px;
-            border-radius: 32px;
-            display: inline-block;
-            letter-spacing: 0.04em;
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #777777;
+            letter-spacing: 0.05em;
         }
         /* Section Title */
         
         .section-title {
             display: flex;
             align-items: center;
-            gap: 18px;
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: #2a3657;
-            margin-bottom: 30px;
-            letter-spacing: 0.03em;
+            gap: 16px;
+            font-weight: 600;
+            font-size: 1.7rem;
+            color: #333333;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
         
         .section-icon {
-            font-size: 1.7rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 10px 14px;
+            font-size: 1.8rem;
+            background: #d3c0b0;
+            color: #5a4a42;
+            padding: 12px 16px;
             border-radius: 14px;
-            box-shadow: 0 6px 14px rgba(102, 126, 234, 0.32);
+            box-shadow: 0 5px 15px rgba(163, 141, 125, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -147,63 +121,62 @@
         /* Table Section */
         
         .table-section {
-            background: #f9faff;
-            padding: 34px 36px;
-            margin-bottom: 38px;
-            border-radius: 24px;
-            border: 1.5px solid #cfd9e9;
-            box-shadow: 0 10px 22px rgba(102, 126, 234, 0.12);
+            background: #faf9f7;
+            padding: 30px 34px;
+            margin-bottom: 36px;
+            border-radius: 20px;
+            border: 1px solid #e1d9d1;
+            box-shadow: 0 8px 24px rgba(163, 141, 125, 0.1);
             transition: box-shadow 0.3s ease;
         }
         
         .table-section:hover {
-            box-shadow: 0 15px 28px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 14px 40px rgba(163, 141, 125, 0.18);
         }
-        /* Table Styles */
         
         .data-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 0 10px;
-            background: white;
-            border-radius: 18px;
+            border-spacing: 0 14px;
+            background: #ffffff;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
         }
         
         .data-table th {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 20px 24px;
-            text-align: left;
+            background: #cbbfba;
+            color: #5a4a42;
+            padding: 18px 24px;
             font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 0.03em;
+            font-size: 1.1rem;
+            letter-spacing: 0.06em;
             user-select: none;
+            text-align: left;
         }
         
         .data-table td {
-            padding: 18px 24px;
+            padding: 14px 24px;
             border-bottom: none;
-            color: #4a5568;
-            font-weight: 600;
+            color: #4a4a4a;
+            font-weight: 500;
             font-size: 1rem;
             vertical-align: middle;
         }
         
         .data-table tbody tr {
-            background: #ffffff;
+            background: #fffaf5;
             border-radius: 14px;
-            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.05);
+            box-shadow: 0 4px 10px rgba(163, 141, 125, 0.05);
             transition: background 0.25s ease;
         }
         
         .data-table tbody tr:not(:last-child) {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .data-table tbody tr:hover {
-            background: linear-gradient(90deg, rgba(102, 126, 234, 0.06), rgba(240, 248, 255, 0.9));
+            background: #f0e8df;
         }
         
         .data-table tbody tr td:first-child {
@@ -218,52 +191,53 @@
         /* Value status */
         
         .value-good {
-            color: #38a169;
-            /* Hijau */
+            color: #7a6f64;
+            /* elegant brown */
             font-weight: 700;
-            text-shadow: 0 0 3px rgba(56, 161, 105, 0.5);
+            text-shadow: 0 0 3px rgba(122, 111, 100, 0.5);
         }
         
         .value-warning {
-            color: #dd6b20;
-            /* Oranye */
+            color: #a97c50;
+            /* warm bronze */
             font-weight: 700;
-            text-shadow: 0 0 3px rgba(221, 107, 32, 0.5);
+            text-shadow: 0 0 3px rgba(169, 124, 80, 0.5);
         }
         
         .value-danger {
-            color: #e53e3e;
-            /* Merah */
+            color: #c74e2e;
+            /* muted red */
             font-weight: 700;
-            text-shadow: 0 0 3px rgba(229, 62, 62, 0.5);
+            text-shadow: 0 0 3px rgba(199, 78, 46, 0.5);
         }
         
         .value-normal {
-            color: #3182ce;
-            /* Biru */
+            color: #556270;
+            /* soft steel blue */
             font-weight: 700;
-            text-shadow: 0 0 3px rgba(49, 130, 206, 0.4);
+            text-shadow: 0 0 3px rgba(85, 98, 112, 0.4);
         }
         /* Recommendations */
         
         .recommendations {
-            background: linear-gradient(135deg, #48bb78, #38a169);
-            color: white;
-            padding: 30px 32px;
-            border-radius: 28px;
-            margin-top: 38px;
-            box-shadow: 0 20px 44px rgba(56, 161, 105, 0.3);
+            background: #d3c0b0;
+            color: #5a4a42;
+            padding: 28px 30px;
+            border-radius: 24px;
+            margin-top: 36px;
+            box-shadow: 0 15px 40px rgba(163, 141, 125, 0.3);
             user-select: none;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         
         .recommendations h3 {
-            font-size: 1.7rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 18px;
             letter-spacing: 0.04em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #4a3f35;
         }
         
         .recommendations ul {
@@ -272,12 +246,12 @@
         }
         
         .recommendations li {
-            padding: 12px 0;
-            padding-left: 32px;
+            padding: 10px 0;
+            padding-left: 30px;
             position: relative;
-            font-weight: 600;
-            font-size: 1.1rem;
-            line-height: 1.4;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.5;
         }
         
         .recommendations li::before {
@@ -286,7 +260,7 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            color: #a7f3d0;
+            color: #a97c50;
             font-weight: 900;
             font-size: 1.2rem;
         }
@@ -294,14 +268,14 @@
         
         .action-buttons {
             display: flex;
-            gap: 24px;
-            margin-top: 38px;
+            gap: 20px;
+            margin-top: 36px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 16px 36px;
+            padding: 14px 36px;
             border: none;
             border-radius: 30px;
             font-size: 1.15rem;
@@ -312,25 +286,29 @@
             display: inline-block;
             text-align: center;
             user-select: none;
+            background: #7a6f64;
+            color: #fff;
+            box-shadow: 0 8px 26px rgba(122, 111, 100, 0.36);
         }
         
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            box-shadow: 0 10px 26px rgba(102, 126, 234, 0.36);
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: #a97c50;
+            box-shadow: 0 14px 38px rgba(169, 124, 80, 0.42);
+            transform: translateY(-3px);
         }
         
         .btn-secondary {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            background: #556270;
+            box-shadow: 0 8px 26px rgba(85, 98, 112, 0.36);
             color: white;
-            box-shadow: 0 10px 26px rgba(79, 172, 254, 0.36);
         }
         
-        .btn:hover,
-        .btn:focus {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
-            outline: none;
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: #3f4a56;
+            box-shadow: 0 14px 38px rgba(63, 74, 86, 0.42);
+            transform: translateY(-3px);
         }
         /* Responsive */
         
@@ -339,41 +317,41 @@
                 padding: 36px 28px;
             }
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
             .header p {
                 font-size: 1.1rem;
             }
             .bmi-value {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             .bmi-card {
-                padding: 28px 22px;
+                padding: 30px 25px;
             }
             .section-title {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
                 gap: 14px;
             }
             .section-icon {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
                 padding: 8px 10px;
             }
             .data-table th,
             .data-table td {
-                padding: 14px 16px;
-                font-size: 0.9rem;
+                padding: 12px 16px;
+                font-size: 0.95rem;
             }
             .recommendations {
-                padding: 26px 24px;
+                padding: 24px 20px;
+                font-size: 1rem;
             }
             .recommendations h3 {
                 font-size: 1.4rem;
             }
             .recommendations li {
-                font-size: 1rem;
                 padding-left: 26px;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding-top: 8px;
+                padding-bottom: 8px;
             }
             .action-buttons {
                 gap: 16px;
@@ -397,8 +375,8 @@
 
         <!-- BMI Card -->
         <div class="bmi-card">
-            <div class="bmi-value" id="bmiValue">22.5</div>
-            <div class="bmi-category" id="bmiCategory">Normal - Ideal</div>
+            <div class="bmi-value" id="bmiValue">--</div>
+            <div class="bmi-category" id="bmiCategory">-</div>
         </div>
 
         <!-- Data Pribadi -->
@@ -414,30 +392,30 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody id="personalData">
+                <tbody>
                     <tr>
                         <td>Nama</td>
-                        <td id="namaResult">John Doe</td>
+                        <td id="namaResult">-</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>Usia</td>
-                        <td id="usiaResult">25 tahun</td>
+                        <td id="usiaResult">-</td>
                         <td class="value-good">Dewasa Muda</td>
                     </tr>
                     <tr>
                         <td>Jenis Kelamin</td>
-                        <td id="genderResult">Pria</td>
+                        <td id="genderResult">-</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>Berat Badan</td>
-                        <td id="beratResult">70 kg</td>
+                        <td id="beratResult">-</td>
                         <td class="value-good">Normal</td>
                     </tr>
                     <tr>
                         <td>Tinggi Badan</td>
-                        <td id="tinggiResult">175 cm</td>
+                        <td id="tinggiResult">-</td>
                         <td class="value-good">Normal</td>
                     </tr>
                 </tbody>
@@ -457,20 +435,20 @@
                         <th>Evaluasi</th>
                     </tr>
                 </thead>
-                <tbody id="nutritionData">
+                <tbody>
                     <tr>
                         <td>Frekuensi Makan</td>
-                        <td id="frekuensiMakanResult">3 kali/hari</td>
-                        <td class="value-good">Ideal</td>
+                        <td id="frekuensiMakanResult">-</td>
+                        <td id="statusFrekuensiMakan" class="-">-</td>
                     </tr>
                     <tr>
                         <td>Konsumsi Air</td>
-                        <td id="konsumsiAirResult">8 gelas/hari</td>
-                        <td class="value-good">Cukup</td>
+                        <td id="konsumsiAirResult">-</td>
+                        <td id="statusKonsumsiAir" class="-">-</td>
                     </tr>
                     <tr>
                         <td>Jenis Makanan</td>
-                        <td id="jenisMakananResult">Nasi, Sayuran, Buah, Protein</td>
+                        <td id="jenisMakananResult">-</td>
                         <td class="value-good">Seimbang</td>
                     </tr>
                 </tbody>
@@ -490,20 +468,20 @@
                         <th>Evaluasi</th>
                     </tr>
                 </thead>
-                <tbody id="exerciseData">
+                <tbody>
                     <tr>
                         <td>Frekuensi Olahraga</td>
-                        <td id="frekuensiOlahragaResult">3 kali/minggu</td>
-                        <td class="value-good">Baik</td>
+                        <td id="frekuensiOlahragaResult">-</td>
+                        <td id="statusFrekuensiOlahraga" class="-">-</td>
                     </tr>
                     <tr>
                         <td>Durasi per Sesi</td>
-                        <td id="durasiOlahragaResult">30 menit</td>
-                        <td class="value-good">Cukup</td>
+                        <td id="durasiOlahragaResult">-</td>
+                        <td id="statusDurasiOlahraga" class="-">-</td>
                     </tr>
                     <tr>
                         <td>Jenis Aktivitas</td>
-                        <td id="jenisAktivitasResult">Jalan Kaki, Lari, Gym</td>
+                        <td id="jenisAktivitasResult">-</td>
                         <td class="value-good">Bervariasi</td>
                     </tr>
                 </tbody>
@@ -523,26 +501,26 @@
                         <th>Evaluasi</th>
                     </tr>
                 </thead>
-                <tbody id="lifestyleData">
+                <tbody>
                     <tr>
                         <td>Jam Tidur</td>
-                        <td id="jamTidurResult">8 jam/malam</td>
-                        <td class="value-good">Ideal</td>
+                        <td id="jamTidurResult">-</td>
+                        <td id="statusJamTidur" class="-">-</td>
                     </tr>
                     <tr>
                         <td>Status Merokok</td>
-                        <td id="merokokResult">Tidak Merokok</td>
-                        <td class="value-good">Sangat Baik</td>
+                        <td id="merokokResult">-</td>
+                        <td id="statusMerokok" class="-">-</td>
                     </tr>
                     <tr>
                         <td>Konsumsi Alkohol</td>
-                        <td id="alkoholResult">Tidak Pernah</td>
-                        <td class="value-good">Sangat Baik</td>
+                        <td id="alkoholResult">-</td>
+                        <td id="statusAlkohol" class="-">-</td>
                     </tr>
                     <tr>
                         <td>Tingkat Stress</td>
-                        <td id="tingkatStressResult">5/10</td>
-                        <td class="value-normal">Moderat</td>
+                        <td id="tingkatStressResult">-</td>
+                        <td id="statusTingkatStress" class="-">-</td>
                     </tr>
                 </tbody>
             </table>
@@ -561,20 +539,20 @@
                         <th>Tindakan</th>
                     </tr>
                 </thead>
-                <tbody id="healthConditionData">
+                <tbody>
                     <tr>
                         <td>Diabetes</td>
-                        <td id="diabetesStatus">Tidak Ada</td>
+                        <td id="diabetesStatus">-</td>
                         <td class="value-good">Pertahankan</td>
                     </tr>
                     <tr>
                         <td>Hipertensi</td>
-                        <td id="hipertensiStatus">Tidak Ada</td>
+                        <td id="hipertensiStatus">-</td>
                         <td class="value-good">Pertahankan</td>
                     </tr>
                     <tr>
                         <td>Penyakit Jantung</td>
-                        <td id="jantungStatus">Tidak Ada</td>
+                        <td id="jantungStatus">-</td>
                         <td class="value-good">Pertahankan</td>
                     </tr>
                 </tbody>
@@ -585,236 +563,191 @@
         <div class="recommendations">
             <h3>💡 Rekomendasi Kesehatan</h3>
             <ul id="recommendationsList">
-                <li>Pertahankan pola makan seimbang dengan porsi yang tepat</li>
-                <li>Tingkatkan variasi sayuran dan buah dalam menu harian</li>
-                <li>Lanjutkan rutina olahraga yang sudah baik</li>
-                <li>Pertahankan jam tidur yang cukup dan teratur</li>
-                <li>Kelola stress dengan teknik relaksasi atau meditasi</li>
-                <li>Rutin melakukan check-up kesehatan berkala</li>
+                <!-- Dinamis -->
             </ul>
         </div>
 
         <!-- Action Buttons -->
         <div class="action-buttons">
             <button class="btn btn-primary" onclick="window.print()">📄 Cetak Laporan</button>
-            <a href="#" class="btn btn-secondary" onclick="history.back()">🔄 Input Ulang</a>
+            <a href="healthy_lifestyle_web (1).html" class="btn btn-secondary">🔄 Input Ulang</a>
         </div>
     </div>
 
     <script>
-        // Sample data - dalam implementasi nyata, data ini akan diambil dari form sebelumnya
-        const sampleData = {
-            nama: "John Doe",
-            usia: 25,
-            gender: "Pria",
-            berat: 70,
-            tinggi: 175,
-            frekuensiMakan: 3,
-            konsumsiAir: 8,
-            makanan: ["nasi", "sayuran", "buah", "protein"],
-            frekuensiOlahraga: 3,
-            durasiOlahraga: 30,
-            aktivitas: ["jalan", "lari", "gym"],
-            jamTidur: 8,
-            merokok: "tidak",
-            alkohol: "tidak",
-            tingkatStress: 5,
-            penyakit: []
-        };
-
-        // Fungsi untuk menghitung BMI
-        function calculateBMI(weight, height) {
-            const heightInM = height / 100;
-            return (weight / (heightInM * heightInM)).toFixed(1);
-        }
-
-        // Fungsi untuk menentukan kategori BMI
-        function getBMICategory(bmi) {
-            if (bmi < 18.5) return {
-                category: "Kurus",
-                status: "warning"
-            };
-            if (bmi < 25) return {
-                category: "Normal - Ideal",
-                status: "good"
-            };
-            if (bmi < 30) return {
-                category: "Gemuk",
-                status: "warning"
-            };
-            return {
-                category: "Obesitas",
-                status: "danger"
-            };
-        }
-
-        // Fungsi untuk mendapatkan evaluasi
-        function getEvaluation(type, value) {
-            const evaluations = {
-                frekuensiMakan: value >= 3 && value <= 4 ? "Ideal" : "Perlu Penyesuaian",
-                konsumsiAir: value >= 8 ? "Cukup" : "Kurang",
-                frekuensiOlahraga: value >= 3 ? "Baik" : value >= 1 ? "Cukup" : "Kurang",
-                durasiOlahraga: value >= 30 ? "Cukup" : "Perlu Ditingkatkan",
-                jamTidur: value >= 7 && value <= 9 ? "Ideal" : "Perlu Penyesuaian",
-                merokok: value === "tidak" ? "Sangat Baik" : "Perlu Perhatian",
-                alkohol: value === "tidak" ? "Sangat Baik" : "Perlu Perhatian",
-                tingkatStress: value <= 3 ? "Rendah" : value <= 6 ? "Moderat" : "Tinggi"
-            };
-            return evaluations[type] || "Normal";
-        }
-
-        // Fungsi untuk mendapatkan kelas CSS berdasarkan evaluasi
-        function getStatusClass(evaluation) {
-            if (evaluation.includes("Sangat Baik") || evaluation.includes("Ideal") || evaluation.includes("Baik")) {
-                return "value-good";
+        document.addEventListener('DOMContentLoaded', () => {
+            const rawData = localStorage.getItem('formData');
+            if (!rawData) {
+                alert('Data tidak ditemukan. Silakan isi formulir terlebih dahulu.');
+                window.location.href = 'healthy_lifestyle_web (1).html'; // Ganti sesuai nama file form input Anda
+                return;
             }
-            if (evaluation.includes("Cukup") || evaluation.includes("Normal") || evaluation.includes("Moderat")) {
-                return "value-normal";
+
+            const data = JSON.parse(rawData);
+
+            function calculateBMI(weight, height) {
+                const heightInM = height / 100;
+                return (weight / (heightInM * heightInM)).toFixed(1);
             }
-            if (evaluation.includes("Kurang") || evaluation.includes("Perlu")) {
-                return "value-warning";
+
+            function getBMICategory(bmi) {
+                if (bmi < 18.5) return {
+                    category: "Kurus",
+                    status: "value-warning"
+                };
+                if (bmi < 25) return {
+                    category: "Normal - Ideal",
+                    status: "value-good"
+                };
+                if (bmi < 30) return {
+                    category: "Gemuk",
+                    status: "value-warning"
+                };
+                return {
+                    category: "Obesitas",
+                    status: "value-danger"
+                };
             }
-            return "value-danger";
-        }
 
-        // Populate data ke tabel
-        function populateData() {
-            // BMI calculation
-            const bmi = calculateBMI(sampleData.berat, sampleData.tinggi);
-            const bmiInfo = getBMICategory(parseFloat(bmi));
+            function getEvaluation(type, value) {
+                const evaluations = {
+                    frekuensiMakan: value >= 3 && value <= 4 ? "Ideal" : "Perlu Penyesuaian",
+                    konsumsiAir: value >= 8 ? "Cukup" : "Kurang",
+                    frekuensiOlahraga: value >= 3 ? "Baik" : value >= 1 ? "Cukup" : "Kurang",
+                    durasiOlahraga: value >= 30 ? "Cukup" : "Perlu Ditingkatkan",
+                    jamTidur: value >= 7 && value <= 9 ? "Ideal" : "Perlu Penyesuaian",
+                    merokok: value === "tidak" ? "Sangat Baik" : "Perlu Perhatian",
+                    alkohol: value === "tidak" ? "Sangat Baik" : "Perlu Perhatian",
+                    tingkatStress: value <= 3 ? "Rendah" : value <= 6 ? "Moderat" : "Tinggi"
+                };
+                return evaluations[type] || "Normal";
+            }
 
-            document.getElementById('bmiValue').textContent = bmi;
-            document.getElementById('bmiCategory').textContent = bmiInfo.category;
+            function getStatusClass(evaluation) {
+                if (evaluation.includes("Sangat Baik") || evaluation.includes("Ideal") || evaluation.includes("Baik")) {
+                    return "value-good";
+                }
+                if (evaluation.includes("Cukup") || evaluation.includes("Normal") || evaluation.includes("Moderat")) {
+                    return "value-normal";
+                }
+                if (evaluation.includes("Kurang") || evaluation.includes("Perlu")) {
+                    return "value-warning";
+                }
+                return "value-danger";
+            }
 
-            // Personal data
-            document.getElementById('namaResult').textContent = sampleData.nama;
-            document.getElementById('usiaResult').textContent = sampleData.usia + ' tahun';
-            document.getElementById('genderResult').textContent = sampleData.gender;
-            document.getElementById('beratResult').textContent = sampleData.berat + ' kg';
-            document.getElementById('tinggiResult').textContent = sampleData.tinggi + ' cm';
+            function populateData() {
+                const bmi = calculateBMI(data.berat, data.tinggi);
+                const bmiInfo = getBMICategory(parseFloat(bmi));
 
-            // Nutrition data
-            document.getElementById('frekuensiMakanResult').textContent = sampleData.frekuensiMakan + ' kali/hari';
-            document.getElementById('konsumsiAirResult').textContent = sampleData.konsumsiAir + ' gelas/hari';
-            document.getElementById('jenisMakananResult').textContent = sampleData.makanan.join(', ');
+                document.getElementById('bmiValue').textContent = bmi;
+                const bmiCategoryElem = document.getElementById('bmiCategory');
+                bmiCategoryElem.textContent = bmiInfo.category;
+                bmiCategoryElem.className = 'bmi-category ' + bmiInfo.status;
 
-            // Exercise data
-            document.getElementById('frekuensiOlahragaResult').textContent = sampleData.frekuensiOlahraga + ' kali/minggu';
-            document.getElementById('durasiOlahragaResult').textContent = sampleData.durasiOlahraga + ' menit';
-            document.getElementById('jenisAktivitasResult').textContent = sampleData.aktivitas.join(', ');
+                document.getElementById('namaResult').textContent = data.nama || '-';
+                document.getElementById('usiaResult').textContent = data.usia ? data.usia + ' tahun' : '-';
+                document.getElementById('genderResult').textContent = data.gender || '-';
+                document.getElementById('beratResult').textContent = data.berat ? data.berat + ' kg' : '-';
+                document.getElementById('tinggiResult').textContent = data.tinggi ? data.tinggi + ' cm' : '-';
 
-            // Lifestyle data
-            document.getElementById('jamTidurResult').textContent = sampleData.jamTidur + ' jam/malam';
-            document.getElementById('merokokResult').textContent = sampleData.merokok === 'tidak' ? 'Tidak Merokok' : 'Merokok';
-            document.getElementById('alkoholResult').textContent = sampleData.alkohol === 'tidak' ? 'Tidak Pernah' : 'Konsumsi Alkohol';
-            document.getElementById('tingkatStressResult').textContent = sampleData.tingkatStress + '/10';
+                document.getElementById('frekuensiMakanResult').textContent = data.frekuensiMakan ? data.frekuensiMakan + ' kali/hari' : '-';
+                document.getElementById('konsumsiAirResult').textContent = data.konsumsiAir ? data.konsumsiAir + ' gelas/hari' : '-';
+                document.getElementById('jenisMakananResult').textContent = (data.makanan && data.makanan.length) ? data.makanan.join(', ') : '-';
 
-            // Health condition data
-            document.getElementById('diabetesStatus').textContent = sampleData.penyakit.includes('diabetes') ? 'Ada Riwayat' : 'Tidak Ada';
-            document.getElementById('hipertensiStatus').textContent = sampleData.penyakit.includes('hipertensi') ? 'Ada Riwayat' : 'Tidak Ada';
-            document.getElementById('jantungStatus').textContent = sampleData.penyakit.includes('jantung') ? 'Ada Riwayat' : 'Tidak Ada';
+                document.getElementById('frekuensiOlahragaResult').textContent = data.frekuensiOlahraga ? data.frekuensiOlahraga + ' kali/minggu' : '-';
+                document.getElementById('durasiOlahragaResult').textContent = data.durasiOlahraga ? data.durasiOlahraga + ' menit' : '-';
+                document.getElementById('jenisAktivitasResult').textContent = (data.aktivitas && data.aktivitas.length) ? data.aktivitas.join(', ') : '-';
 
-            // Update evaluations with proper classes
-            const evaluations = [{
-                id: 'frekuensiMakan',
-                value: sampleData.frekuensiMakan
-            }, {
-                id: 'konsumsiAir',
-                value: sampleData.konsumsiAir
-            }, {
-                id: 'frekuensiOlahraga',
-                value: sampleData.frekuensiOlahraga
-            }, {
-                id: 'durasiOlahraga',
-                value: sampleData.durasiOlahraga
-            }, {
-                id: 'jamTidur',
-                value: sampleData.jamTidur
-            }, {
-                id: 'merokok',
-                value: sampleData.merokok
-            }, {
-                id: 'alkohol',
-                value: sampleData.alkohol
-            }, {
-                id: 'tingkatStress',
-                value: sampleData.tingkatStress
-            }];
+                document.getElementById('jamTidurResult').textContent = data.jamTidur ? data.jamTidur + ' jam/malam' : '-';
+                document.getElementById('merokokResult').textContent = data.merokok === 'tidak' ? 'Tidak Merokok' : 'Merokok';
+                document.getElementById('alkoholResult').textContent = data.alkohol === 'tidak' ? 'Tidak Pernah' : 'Konsumsi Alkohol';
+                document.getElementById('tingkatStressResult').textContent = data.tingkatStress != null ? data.tingkatStress + '/10' : '-';
 
-            // Apply evaluations to table cells
-            evaluations.forEach(item => {
-                const evaluation = getEvaluation(item.id, item.value);
-                const statusClass = getStatusClass(evaluation);
+                document.getElementById('diabetesStatus').textContent = (data.penyakit && data.penyakit.includes('diabetes')) ? 'Ada Riwayat' : 'Tidak Ada';
+                document.getElementById('hipertensiStatus').textContent = (data.penyakit && data.penyakit.includes('hipertensi')) ? 'Ada Riwayat' : 'Tidak Ada';
+                document.getElementById('jantungStatus').textContent = (data.penyakit && data.penyakit.includes('jantung')) ? 'Ada Riwayat' : 'Tidak Ada';
 
-                // Find the corresponding table cell and update it
-                const tables = document.querySelectorAll('.data-table tbody tr');
-                tables.forEach(row => {
-                    const cells = row.querySelectorAll('td');
-                    if (cells.length >= 3) {
-                        const resultCell = cells[1];
-                        const statusCell = cells[2];
+                // Evaluasi status dan styling
+                const evaluations = [{
+                    id: 'frekuensiMakan',
+                    value: data.frekuensiMakan
+                }, {
+                    id: 'konsumsiAir',
+                    value: data.konsumsiAir
+                }, {
+                    id: 'frekuensiOlahraga',
+                    value: data.frekuensiOlahraga
+                }, {
+                    id: 'durasiOlahraga',
+                    value: data.durasiOlahraga
+                }, {
+                    id: 'jamTidur',
+                    value: data.jamTidur
+                }, {
+                    id: 'merokok',
+                    value: data.merokok
+                }, {
+                    id: 'alkohol',
+                    value: data.alkohol
+                }, {
+                    id: 'tingkatStress',
+                    value: data.tingkatStress
+                }];
 
-                        // Match the result cell content to update the status
-                        if (resultCell.textContent.includes(item.value.toString())) {
-                            statusCell.textContent = evaluation;
-                            statusCell.className = statusClass;
-                        }
+                const statusElementIdMap = {
+                    frekuensiMakan: 'statusFrekuensiMakan',
+                    konsumsiAir: 'statusKonsumsiAir',
+                    frekuensiOlahraga: 'statusFrekuensiOlahraga',
+                    durasiOlahraga: 'statusDurasiOlahraga',
+                    jamTidur: 'statusJamTidur',
+                    merokok: 'statusMerokok',
+                    alkohol: 'statusAlkohol',
+                    tingkatStress: 'statusTingkatStress'
+                };
+
+                evaluations.forEach(item => {
+                    const evaluation = getEvaluation(item.id, item.value);
+                    const statusClass = getStatusClass(evaluation);
+                    const statusCell = document.getElementById(statusElementIdMap[item.id]);
+                    if (statusCell) {
+                        statusCell.textContent = evaluation;
+                        statusCell.className = statusClass;
                     }
                 });
-            });
-        }
-
-        // Generate personalized recommendations
-        function generateRecommendations() {
-            const recommendations = [];
-
-            if (sampleData.konsumsiAir < 8) {
-                recommendations.push("Tingkatkan konsumsi air putih menjadi minimal 8 gelas per hari");
             }
 
-            if (sampleData.frekuensiOlahraga < 3) {
-                recommendations.push("Tingkatkan frekuensi olahraga menjadi minimal 3 kali seminggu");
+            function generateRecommendations() {
+                const recommendations = [];
+
+                if (data.konsumsiAir < 8)
+                    recommendations.push("Tingkatkan konsumsi air putih menjadi minimal 8 gelas per hari");
+                if (data.frekuensiOlahraga < 3)
+                    recommendations.push("Tingkatkan frekuensi olahraga menjadi minimal 3 kali seminggu");
+                if (data.jamTidur < 7)
+                    recommendations.push("Perbanyak jam tidur menjadi 7-9 jam per malam");
+                if (data.tingkatStress > 6)
+                    recommendations.push("Kelola stress dengan teknik relaksasi, meditasi, atau konsultasi psikolog");
+                if (data.merokok !== 'tidak')
+                    recommendations.push("Kurangi atau hentikan kebiasaan merokok untuk kesehatan yang lebih baik");
+
+                // Rekomendasi umum
+                recommendations.push("Pertahankan pola makan seimbang dengan porsi yang tepat");
+                recommendations.push("Rutin melakukan check-up kesehatan berkala");
+                recommendations.push("Konsumsi makanan bergizi dengan variasi yang cukup");
+
+                const listElement = document.getElementById('recommendationsList');
+                listElement.innerHTML = '';
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.textContent = rec;
+                    listElement.appendChild(li);
+                });
             }
 
-            if (sampleData.jamTidur < 7) {
-                recommendations.push("Perbanyak jam tidur menjadi 7-9 jam per malam");
-            }
-
-            if (sampleData.tingkatStress > 6) {
-                recommendations.push("Kelola stress dengan teknik relaksasi, meditasi, atau konsultasi psikolog");
-            }
-
-            if (sampleData.merokok !== 'tidak') {
-                recommendations.push("Kurangi atau hentikan kebiasaan merokok untuk kesehatan yang lebih baik");
-            }
-
-            // Add default recommendations
-            recommendations.push("Pertahankan pola makan seimbang dengan porsi yang tepat");
-            recommendations.push("Rutin melakukan check-up kesehatan berkala");
-            recommendations.push("Konsumsi makanan bergizi dengan variasi yang cukup");
-
-            // Update recommendations list
-            const listElement = document.getElementById('recommendationsList');
-            listElement.innerHTML = '';
-            recommendations.forEach(rec => {
-                const li = document.createElement('li');
-                li.textContent = rec;
-                listElement.appendChild(li);
-            });
-        }
-
-        // Initialize data when page loads
-        document.addEventListener('DOMContentLoaded', function() {
             populateData();
             generateRecommendations();
         });
-
-        // Function to receive data from previous page (if implemented)
-        function receiveFormData(data) {
-            Object.assign(sampleData, data);
-            populateData();
-            generateRecommendations();
-        }
     </script>
 </body>
 
